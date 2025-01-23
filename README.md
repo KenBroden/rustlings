@@ -45,7 +45,7 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - function4: Added return type to sales_price function.
   - function5: Removed semicolon in function, makes result of that line the return val of function
 - **Explanation:**
-  - Solutions are mostly self explanatory to all programming functions. function5 was unique to Rust, last line of code without ; is return statement
+  - Solutions are mostly applicable to a majority of programming languages. function5 was unique to Rust, last line of code without ; is return statement
 - **Questions/Issues/Notes:**
   - Everything compiles.
 
@@ -54,11 +54,16 @@ This is my attempt at learning the Rust programming language. I am going to be a
 #### Exercise 03: If
 
 - **Exercise:** [03_if](exercises/03_if)
-- **Issue:**
+- **Issue:** Need to write if/else statement for functions to compile
 - **Solution:**
+  - if1: Wrote if/else for a > b
+  - if2: Wrote else statements for the two other output options
+  - if3: Substituted 2.0 with 2. Removed else "Unknown" string, replaced with
 - **Explanation:**
-- **Alternative Approaches:**
+  - Solutions are based on the if / else if / else format of Rust. Nothing too novel. I think i still prefer explicitly writing
+  'return' like I do in Java.
 - **Questions/Issues:**
+  - All tests pass. Everything compiles.
 
 #### Exercise 04: Primitive Types
 
