@@ -70,9 +70,16 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **Exercise:** [04_primitive_types](exercises/04_primitive_types)
 - **Issue:**
 - **Solution:**
+  - primitive_types1: Defined is_evening boolean
+  - primitive_types2: Tested the is_alphabetic() and is_numeric() methods with different characters
+  - primitive_types3: Defined an array with 100 elements
+  - primitive_types4: Defined new array with reference using &a and then range wanted: &variable_name[start_index..end_index]
+  - primitive_types5: Deconstructed the tuple into two variables
+  - primitive_types6: Accessed the tuple using tuple.0 , tuple.1 ... etc
 - **Explanation:**
-- **Alternative Approaches:**
+  - I think most of these problems/solutions are just learning Rust syntax, but I did do some exploration of the copying of tuple values.
 - **Questions/Issues:**
+  - First problem that inspired any actual testing was primitive_types5, where I tested what happened to the variables I created from deconstructing the tuple AFTER I altered the tuple values.  The variables did not change because they are copies of the original tuple values.
 
 #### Exercise 05: Vectors
 
