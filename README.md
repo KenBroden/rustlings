@@ -37,7 +37,7 @@ This is my attempt at learning the Rust programming language. I am going to be a
 #### Exercise 02: Functions
 
 - **Exercise:** [02_functions](exercises/02_functions)
-- **Issue:**
+- **Issue:** All exercises did not compile.
 - **Solution:**
   - function1: Defined function to print string
   - function2: Declared data type of num parameter
@@ -62,13 +62,13 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **Explanation:**
   - Solutions are based on the if / else if / else format of Rust. Nothing too novel. I think i still prefer explicitly writing
   'return' like I do in Java.
-- **Questions/Issues:**
+- **Questions/Issues/Notes:**
   - All tests pass. Everything compiles.
 
 #### Exercise 04: Primitive Types
 
 - **Exercise:** [04_primitive_types](exercises/04_primitive_types)
-- **Issue:**
+- **Issue:** All exercises did not compile.
 - **Solution:**
   - primitive_types1: Defined is_evening boolean
   - primitive_types2: Tested the is_alphabetic() and is_numeric() methods with different characters
@@ -78,17 +78,28 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - primitive_types6: Accessed the tuple using tuple.0 , tuple.1 ... etc
 - **Explanation:**
   - I think most of these problems/solutions are just learning Rust syntax, but I did do some exploration of the copying of tuple values.
-- **Questions/Issues:**
+- **Questions/Issues/Notes:**
   - First problem that inspired any actual testing was primitive_types5, where I tested what happened to the variables I created from deconstructing the tuple AFTER I altered the tuple values.  The variables did not change because they are copies of the original tuple values.
 
 #### Exercise 05: Vectors
 
 - **Exercise:** [05_vecs](exercises/05_vecs)
-- **Issue:**
+- **Issue:** Exercises don't compile, tests fail.
 - **Solution:**
+  - vecs1: Created a vector with the same entries as array 'a'.
+  - vecs2: Created new vector after doing an operation on each entry of a different vector.  Multiplied each entry by 2.
+
 - **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+  - Basic vector operations in Rust. My first experience with programming with vectors.
+- **Questions/Issues/Notes:**
+  - Use Vectors when you need a dynamic, growable collection of elements of the same type.
+  - Use Arrays when you need a fixed-size collection of elements of the same-type, and the size is known at compile time.
+  - Use Tuples when you need to group a fixed number of elements of different types.
+  - Rust vector formatting:
+
+  ```rust
+  let variable_name: Vec<type> = vec![elements];
+  ```
 
 ### Week 3
 
