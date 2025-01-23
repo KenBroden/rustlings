@@ -39,9 +39,15 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **Exercise:** [02_functions](exercises/02_functions)
 - **Issue:**
 - **Solution:**
+  - function1: Defined function to print string
+  - function2: Declared data type of num parameter
+  - function3: Added unsigned integer 1 to the function call
+  - function4: Added return type to sales_price function.
+  - function5: Removed semicolon in function, makes result of that line the return val of function
 - **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+  - Solutions are mostly self explanatory to all programming functions. function5 was unique to Rust, last line of code without ; is return statement
+- **Questions/Issues/Notes:**
+  - Everything compiles.
 
 ### Week 2
 
