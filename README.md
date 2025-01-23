@@ -13,20 +13,26 @@ This is my attempt at learning the Rust programming language. I am going to be a
 #### Exercise 00: Introduction
 
 - **Exercise:** [00_intro](exercises/00_intro)
-- **Issue:**
 - **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
+  - Fixed print statement.
 - **Questions/Issues:**
 
 #### Exercise 01: Variables
 
 - **Exercise:** [01_variables](exercises/01_variables)
-- **Issue:**
+- **Issue:** All exercises did not compile.
 - **Solution:**
+  - variables1: Added let statement
+  - variables2: Added a value of 10 to x
+  - variables3: Added value of 10 to x
+  - variables4: Added additional 'let x: i32'. Example of variable shadowing
+  - variables5: Added let number: i32;
+  - variables6: Added variable type to NUMBER
 - **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+  - Most of the solutions are basic initialization techniques in Rust. Variable shadowing showed up twice, although the actual example implementation seemed a little pointless.
+- **Questions/Issues/Notes:**
+  - variable4: why would you variable shadow with the same type?
+  - const variables are always immutable and must have a type.
 
 #### Exercise 02: Functions
 
