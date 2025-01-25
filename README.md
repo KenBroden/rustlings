@@ -103,14 +103,35 @@ This is my attempt at learning the Rust programming language. I am going to be a
 
 ### Week 3
 
-#### Exercise 06: Move Semantics
+#### Exercise 06: Move Semantics [06_move_semantics](exercises/06_move_semantics)
 
-- **Exercise:** [06_move_semantics](exercises/06_move_semantics)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
+- **move_semantics1**
+  - Issue: Originally the compiler did not like pushing to vec because it was immutable.
+  - Solution:  Defined vec as mut (mutable).
+  - Explanation: Vectors are immutable by default in Rust, as are variables. Need to explicitly say a variable can be changed or added to (declared mutable)
+
+- **move_semantics2**
+  - Issue: Originally the compiler did not like the initialization of vec1 gaining access to vec0.
+  - Solution: Instead of fill_vec(vec0), I used a clone of vec0 in that method: fill_vec(vec0.clone())
+  - Explanation: To make both vec0 and vec1 accessible at the same time, clone vec0 before passing it to the fill_vec function.
+
+- **move_semantics3**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **move_semantics4**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **move_semantics5**
+  - Issue:
+  - Solution:
+  - Explanation:
+
 - **Alternative Approaches:**
-- **Questions/Issues:**
+- **Questions/Issues/Notes:**
 
 #### Exercise 07: Structs
 
