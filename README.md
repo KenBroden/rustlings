@@ -116,22 +116,29 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - Explanation: To make both vec0 and vec1 accessible at the same time, clone vec0 before passing it to the fill_vec function.
 
 - **move_semantics3**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: fill_vec wants to change vec, but the parameter vec is inputted as immutable by default.
+  - Solution: The parameter also needs a mutable declaration if you want the function to change the parameter.
+  - Explanation: In Rust, function parameters are immutable by default.
 
 - **move_semantics4**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: Doesn't compile because there are 2 mutable references to a single piece of data (x)
+  - Solution: Move z's borrowing of x to after all operations of y are finished.
+  - Explanation:  By reordering the lines there is only one mutable reference to x at any given time.
 
 - **move_semantics5**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The functions defined parameter types do not match their parameter types in the main() implementation.  They handle ownership differently.
+  - Solution: Matched the function parameter ownership type with their implementations.  get_char(data: &String) -> get_char(&data)
+  string_uppercase(mut String) -> string_uppercase(data)
+  - Explanation: parameters used in function calls need to match the way they were defined in the function.
 
 - **Alternative Approaches:**
 - **Questions/Issues/Notes:**
+
+  ```rust
+  fn fill_vec(mut vec: Vec<i32>) -> Vec<i32>  VS. fn fill_vec(vec: &mut Vec<i32>) -> &mut Vec<i32>
+  ```
+
+  The first function is used to demonstrate ownership and modification, while the second function is used to demonstrate borrowing and modification WITHOUT transferring ownership.
 
 #### Exercise 07: Structs
 

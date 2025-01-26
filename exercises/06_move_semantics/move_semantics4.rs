@@ -10,9 +10,13 @@ mod tests {
     fn move_semantics4() {
         let mut x = Vec::new();
         let y = &mut x;
-        let z = &mut x;
+        //let z = &mut x;
         y.push(42);
+        assert_eq!(y, &vec![42]);
+
+        let z = &mut x; // This line moved here to compile.
         z.push(13);
         assert_eq!(x, [42, 13]);
+        // assert_eq!(y, &vec![42]); // This line won't compile because y is borrowed.
     }
 }
