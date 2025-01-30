@@ -131,7 +131,6 @@ This is my attempt at learning the Rust programming language. I am going to be a
   string_uppercase(mut String) -> string_uppercase(data)
   - Explanation: parameters used in function calls need to match the way they were defined in the function.
 
-- **Alternative Approaches:**
 - **Questions/Issues/Notes:**
 
   ```rust
@@ -155,21 +154,33 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **structs3**
   - Issue: The functions within the package do not have return types, nor defined operations.
   - Solution: Added return types to is_international (bool) and get_fees (u32). Also defined the function operations. NOTE: need to call self.field_name to access fields
-  - Explanation:
+  - Explanation: By implementing struct Package you can define functions that work exclusively for that struct. Reminds me of methods within in class in Java.
 
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **Questions/Issues/Notes:**
   - A unit struct is a struct with no fields. They are used as markers, zero-sized types, or for implementing traits.
   - Need to call self.field_name to access the struct fields. Functions within the struct Package, struct3.
 
-#### Exercise 08: Enums
+#### Exercise 08: Enums [08_enums](exercises/08_enums)
 
-- **Exercise:** [08_enums](exercises/08_enums)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **enums1**
+  - Issue: The Message enum has no types defined.
+  - Solution: Added the enum Message types which were called in main()
+  - Explanation: Enums are defined using the enum keyword followed by the name of the enum and a list of variants.
+
+- **enums2**
+  - Issue: The message enum has no types defined. The calls in main() have additional parameters beyond just a name.
+  - Solution: Added all the variants with different variant data types that matched the calls in main().
+  - Explanation: Enum variants can be a simple name, a tuple-like variant with associated data, or a struct-like variant with named fields.
+
+- **enums3**
+  - Issue: the impl State is missing instructions for the process function
+  - Solution: Used the match keyword that allows comparison of a value against a series of patterns, and then executes code based on which pattern matches.
+  - Explanation: The process function encapsulates the logic for handling different types of messages in one place. This makes the code more organized and easier to maintain. The process function uses pattern matching to determine which method to call based on the variant of the Message enum. This is a powerful feature in Rust that allows you to handle different cases in a concise and readable way.
+
+- **Questions/Issues/Notes:**
+  - enum variants can be a simple name, a tuple-like variant with associated data, or a struct-like variant with named fields.
+  - You can implement methods for an enum using an `impl` block, just like you can for structs. This allows you to define behavior associated with the enum and its variants. By implementing methods for an enum, you can encapsulate functionality that operates on the enum and its variants.
+  - By defining a process function, you can handle different types of messages in a consistent and organized manner, leveraging Rust's powerful pattern matching capabilities. This approach makes it easier to manage and extend the code as new message types are added.
 
 ### Week 4
 

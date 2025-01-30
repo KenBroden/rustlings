@@ -7,6 +7,16 @@ struct Point {
 #[derive(Debug)]
 enum Message {
     // TODO: Define the different variants used below.
+    // ADDED: enum variants with different types of data.
+    // You can add just a name, just a struct, a names with embedded names with types, and other combinations.
+    Resize {
+        width: u64,
+        height: u64,
+    },
+    Move(Point),
+    Echo(String),
+    ChangeColor(u8, u8, u8),
+    Quit,
 }
 
 impl Message {
