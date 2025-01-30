@@ -182,16 +182,40 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - You can implement methods for an enum using an `impl` block, just like you can for structs. This allows you to define behavior associated with the enum and its variants. By implementing methods for an enum, you can encapsulate functionality that operates on the enum and its variants.
   - By defining a process function, you can handle different types of messages in a consistent and organized manner, leveraging Rust's powerful pattern matching capabilities. This approach makes it easier to manage and extend the code as new message types are added.
 
+#### Exercise 09: Strings [09_strings](exercises/09_strings)
+
+- **strings1**
+  - Issue: The function returns a String, but "blue" is a string slice
+  - Solution: Added .to_string() method to the string slice: "blue".to_string()
+  - Explanation: String and a string slice(&str) are different data types in Rust. Strings are owned, mutable, have dynamic size, and have unique methods. String slices are borrowed, immutable, and fixed size.
+
+- **strings2**
+  - Issue: is_a_color_word takes a string slice. word is a String. is_a_color_word(word) is a mismatched data type for the parameter.
+  - Solution: Added & to the word parameter (&word) to create a reference to the string slice of the String word.
+  - Explanation: Adding a reference to a String returns a string slice.  This is a borrowed reference and the original Sting is still accessible.
+
+- **strings3**
+  - Issue: All three methods are missing their operation definitions. They all have return types, so without operation instructions and a return of the proper type, this won't compile.
+  - Solution: Used predefined methods which aligned with the function's intended use. For compose_me(), in order to concat I needed to convert to a String from the input parameter &str.
+  - Explanation: trim() is defined for &str. Concatenation of a string only works for Strings. replace() works for both &str and String.
+
+- **strings4**
+  - Issue: The placeholder function has no operation, need to replace with defined functions string_slice() or string()
+  - Solution: Replaced the placeholder function with the appropriate functions according to the output of the argument.
+  - Explanation: Only placeholder replacement I got wrong was for the argument:
+
+  ```rust
+  placeholder(&String::from("abc")[0..1]);
+  ```
+
+  The range [0..1] operates on string slices but not Strings themselves. The range is not exclusive to &str, thus its documentation's output didn't help much the first attempt.
+
+- **Questions/Issues/Notes:**
+  - **Methods for Both `&str` and String**: `len`, `is_empty`, `contains`, `starts_with`, `ends_with`, `find`, `replace`, `trim`, `split`.
+  - **Methods for `&str`**: `as_bytes`, chars, `lines`.
+  - **Methods for String**: `push`, `push_str`, `insert`, `insert_str`, `clear`, `pop`.
+
 ### Week 4
-
-#### Exercise 09: Strings
-
-- **Exercise:** [09_strings](exercises/09_strings)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
 
 #### Exercise 10: Modules
 

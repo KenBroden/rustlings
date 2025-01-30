@@ -1,6 +1,7 @@
 // TODO: Fix the compiler error without changing the function signature.
+// ADDED: .to_string() method to convert the string slice to a String.
 fn current_favorite_color() -> String {
-    "blue"
+    "blue".to_string()
 }
 
 fn main() {

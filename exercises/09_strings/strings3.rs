@@ -1,17 +1,34 @@
 fn trim_me(input: &str) -> &str {
     // TODO: Remove whitespace from both ends of a string.
+    // ADDED: .trim() method to remove whitespace from both ends of a string.
+    // the trim method is defined on the &str type.
+
+    input.trim()
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
+    // ADDED: converted &str to String using the to_string() method and concatenated " world!" to it.
+    // Need to convert in order to add more text to the string.
+
+    input.to_string() + " world!"
+    // "testing left side of concat" + input.to_String() // This will not work because the left side of the + operator is not a String.
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    // ADDED: .replace() method to replace "cars" with "balloons" in the string.
+    // the replace() method is defined for both String and &str types.
+
+    input.replace("cars", "balloons")
 }
 
 fn main() {
     // You can optionally experiment here.
+
+    let s: String = String::from("Hello!");
+    let result = s.replace("Hello", "Hi");
+    println!("{}", result);
 }
 
 #[cfg(test)]
