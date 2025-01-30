@@ -34,7 +34,18 @@ mod tests {
         let order_template = create_order_template();
 
         // TODO: Create your own order using the update syntax and template above!
-        // let your_order =
+        // ADDED: Created a new order by defining some unique fields and performing a field-by-field copy from the template.
+        // The copied field have no ownership of the template, they are just copies
+        // to copy a field use: field_name: order_template.field_name
+        let your_order = Order {
+            name: "Hacker in Rust".to_string(),
+            year: order_template.year,
+            made_by_phone: order_template.made_by_phone,
+            made_by_mobile: order_template.made_by_mobile,
+            made_by_email: order_template.made_by_email,
+            item_number: order_template.item_number,
+            count: 1,
+        };
 
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
@@ -43,5 +54,16 @@ mod tests {
         assert_eq!(your_order.made_by_email, order_template.made_by_email);
         assert_eq!(your_order.item_number, order_template.item_number);
         assert_eq!(your_order.count, 1);
+
+        // Test that the template is still accessible and not modified.
+        assert_eq!(order_template.name, "Bob");
+        assert_eq!(order_template.year, 2019);
+        assert_eq!(order_template.made_by_phone, false);
+        assert_eq!(order_template.made_by_mobile, false);
+        assert_eq!(order_template.made_by_email, true);
+        assert_eq!(order_template.item_number, 123);
+        assert_eq!(order_template.count, 0);
+
+
     }
 }

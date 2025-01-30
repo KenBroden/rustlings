@@ -140,14 +140,27 @@ This is my attempt at learning the Rust programming language. I am going to be a
 
   The first function is used to demonstrate ownership and modification, while the second function is used to demonstrate borrowing and modification WITHOUT transferring ownership.
 
-#### Exercise 07: Structs
+#### Exercise 07: Structs [07_structs](exercises/07_structs)
 
-- **Exercise:** [07_structs](exercises/07_structs)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
+- **structs1**
+  - Issue: Both color structs had no defined fields. Needed a green struct defined for the tests. Also missing unit struct instantiation.
+  - Solution: Added red, green, blue fields to ColorRegularStruct. Added 3 u8 fields to ColorTupleStruct. Defined test structs and instantiated unit struct.
+  - Explanation: Structs can be defined with named fields with a data type, or as a tuple with just data types as parameters. Need to look up UnitStruct and its use.
+
+- **structs2**
+  - Issue: There is no order initialized that match what exists in the test.
+  - Solution: The tests have unique values for the name and count fields, and then the rest of them match the defined template. Initialized am order struct which defined a name and count, and then copied the values of the template.
+  - Explanation: to copy a field use: field_name: order_template.field_name. This is just a copy operation and still allows the template to be used again.
+
+- **structs3**
+  - Issue: The functions within the package do not have return types, nor defined operations.
+  - Solution: Added return types to is_international (bool) and get_fees (u32). Also defined the function operations. NOTE: need to call self.field_name to access fields
+  - Explanation:
+
 - **Alternative Approaches:**
 - **Questions/Issues:**
+  - A unit struct is a struct with no fields. They are used as markers, zero-sized types, or for implementing traits.
+  - Need to call self.field_name to access the struct fields. Functions within the struct Package, struct3.
 
 #### Exercise 08: Enums
 
