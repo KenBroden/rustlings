@@ -261,7 +261,60 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - Defining a HashMap within a function is not unique to Rust, but the way you manage and use hash maps differs between Rust and Java due to their respective language features and memory management models.
   - By using the `entry` method with `or_insert`, you can efficiently manage the contents of the HashMap and ensure that new fruits are only added if they are not already present.
 
-### Week 6
+#### Exercise 12: Options [12_options](exercises/12_options)
+
+- **options1**
+  - Issue: The maybe_icecream function was undefined, no return caused a type mismatch.
+  - Solution: Added if else statement to check the hour of the day and return the correct value.
+  - Explanation: Using an Option return you can wrap integers in Some(int) or None. To compare in a test you need to unwrap the Option.
+
+- **options2**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **options3**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **Questions/Issues/Notes:**
+  - core::option::Option::Some(T) = Some type of `T`
+
+#### Exercise 13: Error Handling [13_error_handling](exercises/13_error_handling)
+
+- **errors1**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **errors2**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **errors3**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **errors4**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **errors5**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **errors6**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **Questions/Issues/Notes:**
+  - notes
 
 #### Exercise 15: Traits
 
