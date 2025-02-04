@@ -241,28 +241,25 @@ This is my attempt at learning the Rust programming language. I am going to be a
 #### Exercise 11: HashMaps [11_hashmaps](exercises/11_hashmaps)
 
 - **hashmaps1**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The compiler cannot find basket in the scope of the function fruit_basket().  basket not defined
+  - Solution: Added basket definition as a new HashMap.  Inserted more fruits into basket. Don't forget to return basket (I did initially)
+  - Explanation: For the tests to pass I needed to define at least five fruits in the fruit_basket() function
 
 - **hashmaps2**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The tests want more fruits in the basket
+  - Solution: I added more fruit enums, defined them as fruit_kinds, and then inserted them into the basket within the for loop (all qty 1)
+  - Explanation: I'm really not sure of the teaching point of this exercise was, I may have done it wrong.  I added new Fruits directly to the enums and the fruit_kinds, and then added them to the basket via the for fruit in fruit_kinds loop.
 
 - **hashmaps3**
-  - Issue:
-  - Solution:
+  - Issue: the scores hashmaps did not have any entries.
+  - Solution: added team names via scores.entry... and updated the scores via scores.get_mut(team_1_name).unwrap()...
   - Explanation:
-
-  ```rust
-  placeholder(&String::from("abc")[0..1]);
-  ```
-
-  The range [0..1] operates on string slices but not Strings themselves. The range is not exclusive to &str, thus its documentation's output didn't help much the first attempt.
+    - **Adding Team Entries**: Used the `entry` method to insert teams if they do not already exist.
+    - **Updating Scores**: Used the `get_mut` method to update the scores for each team.
 
 - **Questions/Issues/Notes:**
-  - 
+  - Defining a HashMap within a function is not unique to Rust, but the way you manage and use hash maps differs between Rust and Java due to their respective language features and memory management models.
+  - By using the `entry` method with `or_insert`, you can efficiently manage the contents of the HashMap and ensure that new fruits are only added if they are not already present.
 
 ### Week 6
 
