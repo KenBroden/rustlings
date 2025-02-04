@@ -217,52 +217,52 @@ This is my attempt at learning the Rust programming language. I am going to be a
 
 ### Week 4
 
-#### Exercise 10: Modules
+#### Exercise 10: Modules [10_modules](exercises/10_modules)
 
-- **Exercise:** [10_modules](exercises/10_modules)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **modules1**
+  - Issue: make_sausage() is being called in main, will not compile.
+  - Solution: Declare make_sausage() function pub (public).
+  - Explanation: make_sausage() is defined within a module and is private by default. Must be declared pub to use outside of the mod.
 
-#### Exercise 11: HashMaps
+- **modules2**
+  - Issue: delicious_snacks call in main cannot find fruit or veggie.
+  - Solution: Added pub use self::function_name::path as new_name;
+  - Explanation: By adding the line pub use self::function_name::path as new_name; within delicious_snacks creates a new path to an already defined const within the mod functions.
 
-- **Exercise:** [11_hashmaps](exercises/11_hashmaps)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **modules3**
+  - Issue: cannot find value `UNIX_EPOCH` in the SystemTime module scope
+  - Solution: Added `use std::time::{SystemTime, UNIX_EPOCH};`
+  - Explanation: The line `use std::time::{SystemTime, UNIX_EPOCH};` brings the `SystemTime` struct and `UNIX_EPOCH` constant from the `std::time` module into the current scope. This allows you to use these items directly without needing to specify their full paths, making the code more readable and maintainable.
 
-### Week 5
+- **Questions/Issues/Notes:**
+  - **`use` Keyword**: The `use` keyword is used to bring items from a module into scope, so you don't have to use the full path every time you refer to them.
+  - **`as` Keyword**: The `as` keyword allows you to rename the imported item, which can help avoid naming conflicts or make the code more readable.
 
-#### Exercise 12: Options
+#### Exercise 11: HashMaps [11_hashmaps](exercises/11_hashmaps)
 
-- **Exercise:** [12_options](exercises/12_options)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **hashmaps1**
+  - Issue:
+  - Solution:
+  - Explanation:
 
-#### Exercise 13: Error Handling
+- **hashmaps2**
+  - Issue:
+  - Solution:
+  - Explanation:
 
-- **Exercise:** [13_error_handling](exercises/13_error_handling)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **hashmaps3**
+  - Issue:
+  - Solution:
+  - Explanation:
 
-#### Exercise 14: Generics
+  ```rust
+  placeholder(&String::from("abc")[0..1]);
+  ```
 
-- **Exercise:** [14_generics](exercises/14_generics)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+  The range [0..1] operates on string slices but not Strings themselves. The range is not exclusive to &str, thus its documentation's output didn't help much the first attempt.
+
+- **Questions/Issues/Notes:**
+  - 
 
 ### Week 6
 

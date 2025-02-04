@@ -6,6 +6,11 @@ mod delicious_snacks {
     // use self::fruits::PEAR as ???;
     // use self::veggies::CUCUMBER as ???;
 
+    // ADDED: Renamed the paths to fruit and veggie.
+    // pub use self::function_name::path as new_name;
+
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
     mod fruits {
         pub const PEAR: &str = "Pear";
         pub const APPLE: &str = "Apple";
@@ -15,6 +20,7 @@ mod delicious_snacks {
         pub const CUCUMBER: &str = "Cucumber";
         pub const CARROT: &str = "Carrot";
     }
+
 }
 
 fn main() {
