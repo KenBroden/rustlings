@@ -286,14 +286,14 @@ This is my attempt at learning the Rust programming language. I am going to be a
 #### Exercise 13: Error Handling [13_error_handling](exercises/13_error_handling)
 
 - **errors1**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The function has no error handling. Returns an `Option<String>`
+  - Solution: Changed return type of function to `Result<String, String>`. Added Err and Ok messages as Strings.
+  - Explanation: Using Result and Err & Ok statements is better for error handling than Option returns.
 
 - **errors2**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The function had no error handling if the user entered something other than &str integer
+  - Solution: Used an if else statement with Ok and Err Results
+  - Explanation: Needed error handling for a non integer &str input. You can use ()? to determine if the parsed value is a certain type, which would have been a better solution than my if else statement.
 
 - **errors3**
   - Issue:
