@@ -269,17 +269,19 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - Explanation: Using an Option return you can wrap integers in Some(int) or None. To compare in a test you need to unwrap the Option.
 
 - **options2**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The simple_option() function is missing an `if let` function. The layered_option() function is missing a `while let`
+  - Solution: Added if/while let statements as described in the comments. Needed double `Some(Some(...))` on the while let statement.
+  - Explanation: `if let` and `while let` statements are different ways to handle `Option` values in Rust. The `while let` statement needed double Some wrappers because of the nested `Option` types involved in the optional_integers vector and the Vec::pop() method.
 
 - **options3**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: optional_point partial move occurs because value has type `Point`, which does not implement the `Copy` trait
+  - Solution: I made Some(p) into a reference point Some(ref p)
+  - Explanation: By adding `ref` to Some(p), you borrow the value inside the `Option` instead of taking ownership. This allows you to use the `Option` itself after the match statement, fixing the compiler error related to ownership and borrowing in Rust.
 
 - **Questions/Issues/Notes:**
   - core::option::Option::Some(T) = Some type of `T`
+  - **`if let`**: Used to match and extract a value from an `Option` in a single statement.
+  - **`while let`**: Used to repeatedly match and extract values from an `Option` inside a loop.
 
 #### Exercise 13: Error Handling [13_error_handling](exercises/13_error_handling)
 
