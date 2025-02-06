@@ -296,27 +296,27 @@ This is my attempt at learning the Rust programming language. I am going to be a
   - Explanation: Needed error handling for a non integer &str input. You can use ()? to determine if the parsed value is a certain type, which would have been a better solution than my if else statement.
 
 - **errors3**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The ? operator can only be used on a function that returns an Option or a Result. So while total_cost() does return a Result, main() does not.
+  - Solution: Added a Result<> output to the main() function. If total_cost() returns an Err, then the execution stops, and the `println!` and `Ok()` will not be executed
+  - Explanation: Adding a Result<> to the output of main() allows use of the ? operator.
 
 - **errors4**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The new() function within the PositiveNonzeroInteger impl has no check for 0 or negative inputs. There's no Err statements despite being a possible Result<>
+  - Solution: Added if-else statement to check if the value is zero or negative.  If so, then an Err is outputted with the already defined enum.
+  - Explanation: If you're outputting a Result<> which includes an Err, obviously you need to define the conditions which result in an error.
 
 - **errors5**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The main has no specified output type, but the body of the function returns an Ok(), which is a return of a Result<>; thus there is a type mismatch
+  - Solution: Similar to error3, I added a Result<> output type for main(). Except for this Result the error was within a Box type `Result<(), Box<dyn Error>>`
+  - Explanation: I'm not entirely clear on the use of Box<>, but for this exercise it allows handling of more types of errors, rather than errors3 that only handles ParseIntError.
 
 - **errors6**
-  - Issue:
-  - Solution:
-  - Explanation:
+  - Issue: The original Parse function used Unwrap to handle parsing errors, which caused the program to panic if the input string could not be parsed into an `i64`.
+  - Solution: Replaced the unwrap call with a `match` statement to handle the Ok and Err cases of the parse method. If parsing fails, the function returns a ParsePosNonzeroError::ParseInt error. If parsing succeeds, the function proceeds to create a PositiveNonzeroInteger and maps any creation errors to ParsePosNonzeroError::from_creation.
+  - Explanation: Using unwrap is not safe for error handling as it causes the program to panic on failure. By using a `match` statement, we can handle parsing errors better and return appropriate error types, making the function more robust.
 
 - **Questions/Issues/Notes:**
-  - notes
+  - `Box<dyn Error>` allows the function to return different types of errors. This is useful when you have multiple error types in your program and want to handle them uniformly.
 
 #### Exercise 15: Traits
 

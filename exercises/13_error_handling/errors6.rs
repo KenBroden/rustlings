@@ -45,6 +45,7 @@ impl PositiveNonzeroInteger {
     fn parse(s: &str) -> Result<Self, ParsePosNonzeroError> {
         // TODO: change this to return an appropriate error instead of panicking
         // when `parse()` returns an error.
+        // ADDED: match case for: Ok case of an i64 input, or Err case of a ParseIntError
         let x: i64 = match s.parse() {
             Ok(x) => x,
             Err(e) => {
