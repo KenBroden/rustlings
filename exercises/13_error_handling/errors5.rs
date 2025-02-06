@@ -12,7 +12,6 @@
 // can be returned in a `Result`.
 
 use std::error::Error;
-use std::fmt;
 
 #[derive(PartialEq, Debug)]
 enum CreationError {
@@ -21,13 +20,12 @@ enum CreationError {
 }
 
 // This is required so that `CreationError` can implement `Error`.
-impl fmt::Display for CreationError {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        let description = match *self {
-            CreationError::Negative => "number is negative",
-            CreationError::Zero => "number is zero",
-        };
-        f.write_str(description)
+impl std::fmt::Display for CreationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+        match *self {
+            CreationError::Negative => write!(f, "Negative value provided"),
+            CreationError::Zero => write!(f, "Zero value provided"),
+        }
     }
 }
 
@@ -50,8 +48,21 @@ impl PositiveNonzeroInteger {
 // use to describe both errors? Is there a trait which both errors implement?
 // ADDED: return type Result<(), Box<dyn Error>> - allows for multiple error types
 fn main() -> Result<(), Box<dyn Error>> {
-    let pretend_user_input = "42";
-    let x: i64 = pretend_user_input.parse()?;
-    println!("output={:?}", PositiveNonzeroInteger::new(x)?);
+
+    // Testing the dynamic error handling
+    let test_inputs = vec!["42", "-42", "0", "not a number"];
+
+    for input in test_inputs {
+        match run_test(input) {
+            Ok(result) => println!("Input: {}, Result: {:?}", input, result),
+            Err(e) => println!("Input: {}, Error: {}", input, e),
+        }
+    }
     Ok(())
+}
+
+fn run_test(input: &str) -> Result<PositiveNonzeroInteger, Box<dyn Error>> {
+    let x: i64 = input.parse()?;
+    let result = PositiveNonzeroInteger::new(x)?;
+    Ok(result)
 }
