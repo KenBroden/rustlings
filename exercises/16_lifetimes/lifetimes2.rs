@@ -9,11 +9,13 @@ fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
 
 fn main() {
     // TODO: Fix the compiler error by moving one line.
+    // MOVED: Moved the declaration of string2 outside of the block
 
     let string1 = String::from("long string is long");
+    let string2 = String::from("xyz");
     let result;
     {
-        let string2 = String::from("xyz");
+        // let string2 = String::from("xyz");
         result = longest(&string1, &string2);
     }
     println!("The longest string is '{result}'");

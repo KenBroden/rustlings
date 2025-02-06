@@ -327,14 +327,31 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **Alternative Approaches:**
 - **Questions/Issues:**
 
-#### Exercise 16: Lifetimes
+#### Exercise 16: Lifetimes [16_lifetimes](exercises/16_lifetimes)
 
-- **Exercise:** [16_lifetimes](exercises/16_lifetimes)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **lifetimes1**
+  - Issue: The return statement of the function longest() is missing a lifetime specifier.
+  - Solution: Added lifetimes to the function signature with 'a syntax.
+  - Explanation: Adding the lifetime parameter ensures the compiler can check that the references are valid and do not outlive their owners.
+
+- **lifetimes2**
+  - Issue: The lifetime of the string2 reference does not live long enough where it is currently called in main()
+  - Solution: Moved the declaration of string2 outside of the block.
+  - Explanation: By defining string2 inside of a {} block it makes that reference out of scope. Moving the declaration outside of the inner block ensures &string2 remains valid for the duration of its use. What really makes the reference out of scope is the println! which uses `result` outside of the block.
+
+- **lifetimes3**
+  - Issue: The struct Book had no lifetimes specified
+  - Solution: Added a lifetime to the struct, as well as each field.
+  - Explanation: Because the field data is using reference `str`s and not `String`s, this struct requires specification of how long those references are valid.
+
+- **Questions/Issues/Notes:**
+  - Basic use:
+
+  ```rust
+    fn longest<'a>(x: &'a str, y: &'a str) -> &'a str
+  ```
+
+  - structs which use reference data need lifetime specifiers.
 
 #### Exercise 17: Tests
 
