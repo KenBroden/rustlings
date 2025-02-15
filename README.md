@@ -318,6 +318,32 @@ This is my attempt at learning the Rust programming language. I am going to be a
 - **Questions/Issues/Notes:**
   - `Box<dyn Error>` allows the function to return different types of errors. This is useful when you have multiple error types in your program and want to handle them uniformly.
 
+#### Exercise 14: Generics [14_generics](exercises/14_generics)
+
+- **generics1**
+  - Issue: Variable `numbers` did not have an assigned type of the vector values.
+  - Solution: Declared `numbers` as a `Vec<i16>`
+  - Explanation: I'm not entirely sure how I am using generics in this instance. Seems like I replaced the generic with a concrete type.
+
+- **generics2**
+  - Issue: The struct `Wrapper` field value has a concrete type defined. The test with "foo" currently won't compile, mismatched types.
+  - Solution: Added a T declaration to the struct Wrapper, the impl, the impl type, and the function input `value`
+  - Explanation: Obviously we needed wrapper to be less restrictive on its input type. thus I declared generic T as the type in multiple places. This will take some getting used to, T needed to be declared in a lot of places for the code to compile.
+
+- **Questions/Issues/Notes:**
+  - The into() method can be used to convert u8 and i8 values into i16 before storing them in the vector. This method works for other sizes too.
+
+```rust
+    struct Wrapper<T> {
+      value: T,
+  }
+  impl<T> Wrapper<T> {
+      fn new(value: T) -> Self {
+          Wrapper { value }
+      }
+  }
+```
+
 #### Exercise 15: Traits
 
 - **Exercise:** [15_traits](exercises/15_traits)
