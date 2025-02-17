@@ -344,14 +344,46 @@ This is my attempt at learning the Rust programming language. I am going to be a
   }
 ```
 
-#### Exercise 15: Traits
+#### Exercise 15: Traits [15_traits](exercises/15_traits)
 
-- **Exercise:** [15_traits](exercises/15_traits)
-- **Issue:**
-- **Solution:**
-- **Explanation:**
-- **Alternative Approaches:**
-- **Questions/Issues:**
+- **traits1**
+  - Issue: The implementation (impl) for `AppendBar` for `String` is undefined.
+  - Solution: Created a fn within the impl to add "Bar" to self
+  - Explanation: I guess this makes a trait you can give to String objects. Once that String object has that trait, it now has the option to use the `append_bar` function. Does a append_bar take ownership of the String using the function, it must.
+
+- **traits2**
+  - Issue: AppendBar is defined as a trait, but has no implementation defined.
+  - Solution: AppendBar needed to be defined as an implementation for a Vec of Strings. The function append_bar not takes in a mutable self, and uses the .push() method to append the string "bar" to the vecs.
+  - Explanation: This implementation allows the append_bar function to be used on a vector of strings (`Vec<String>`). By making self mutable, the function can modify the original vector by pushing the string "Bar" into it. This demonstrates how traits can be implemented for different types, enabling the same method to be used in various contexts.
+
+- **traits3**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **traits4**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **traits5**
+  - Issue:
+  - Solution:
+  - Explanation:
+
+- **Questions/Issues/Notes:**
+  - The into() method can be used to convert u8 and i8 values into i16 before storing them in the vector. This method works for other sizes too.
+
+```rust
+    struct Wrapper<T> {
+      value: T,
+  }
+  impl<T> Wrapper<T> {
+      fn new(value: T) -> Self {
+          Wrapper { value }
+      }
+  }
+```
 
 #### Exercise 16: Lifetimes [16_lifetimes](exercises/16_lifetimes)
 
